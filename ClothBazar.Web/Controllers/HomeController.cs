@@ -29,5 +29,11 @@ namespace ClothBazar.Web.Controllers
             ViewBag.Message = "Your contact page.";
             return View();
         }
+        public ActionResult AdminDashboard()
+        {
+            ViewBag.Message = "Your contact page.";
+            return View();
+        }
+
     }
 }

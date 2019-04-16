@@ -4,6 +4,10 @@
 
     var imageURL = !string.IsNullOrEmpty(Model.ImageURL) ? Model.ImageURL : "/Content/images/system/placeholder-image.png";
 }
+@if (!User.IsInRole("Admin"))
+{
+    Response.Redirect("~/AccessDenied.aspx");
+}
 
 <h2>Edit Product</h2>
 

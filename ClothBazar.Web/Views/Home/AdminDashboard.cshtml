@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "AdminDashboard";
+}
+@if (!User.IsInRole("Admin"))
+{
+    Response.Redirect("~/AccessDenied.aspx");
+}
+<a href="@Url.Action("Index", "Category")" class="themesflat-button bg-white width-150">Update Categories</a>
+<a href="@Url.Action("Index", "Product")" class="themesflat-button bg-white width-150">Update Product</a>
+<a href="@Url.Action("Index", "Order")" class="themesflat-button bg-white width-150">Order</a>
+

@@ -1,16 +1,31 @@
-﻿@using Microsoft.AspNet.Identity
+﻿  <!-- Mobile Specific Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- Bootstrap  -->
+<link rel="stylesheet" type="text/css" href="~/Content/stylesheets/bootstrap.css">
+
+<!-- Theme Style -->
+<link rel="stylesheet" type="text/css" href="~/Content/stylesheets/style.css">
+<link rel="stylesheet" type="text/css" href="~/Content/stylesheets/responsive.css">
+
+<!-- Colors -->
+<link rel="stylesheet" type="text/css" href="~/Content/stylesheets/colors/color1.css" id="colors">
+
+<!-- Animation Style -->
+<link rel="stylesheet" type="text/css" href="~/Content/stylesheets/animate.css">
+@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+               <b> @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</b>
+            </li>
+            
+        </ul>
     }
 }
 else

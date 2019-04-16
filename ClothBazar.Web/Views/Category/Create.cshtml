@@ -3,7 +3,10 @@
 
     var imageURL = "/Content/images/system/placeholder-image.png";
 }
-
+@if (!User.IsInRole("Admin"))
+{
+    Response.Redirect("~/AccessDenied.aspx");
+}
 <h2>Create Category</h2>
 
 <form id="createCategory">

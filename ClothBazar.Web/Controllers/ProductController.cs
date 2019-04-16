@@ -13,13 +13,13 @@ namespace ClothBazar.Web.Controllers
     public class ProductController : Controller
     {
 
-        [Authorize(Roles = "Admin")]
+      
         public ActionResult Index()
         {
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+      
         public ActionResult ProductTable(string search, int? pageNo)
         {
             var pageSize = ConfigurationsService.Instance.PageSize();

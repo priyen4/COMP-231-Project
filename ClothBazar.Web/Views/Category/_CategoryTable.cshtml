@@ -1,5 +1,8 @@
 ﻿@model ClothBazar.Web.Models.CategorySearchViewModel
-
+@if (!User.IsInRole("Admin"))
+{
+    Response.Redirect("~/AccessDenied.aspx");
+}
 <div>
     <form method="post">
         <div class="row">

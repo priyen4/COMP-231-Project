@@ -2,7 +2,10 @@
 @{
     ViewBag.Title = "Delete";
 }
-
+@if (!User.IsInRole("Admin"))
+{
+    Response.Redirect("~/AccessDenied.aspx");
+}
 <h2>Delete Category</h2>
 
 <h1>Are you sure you want to delete this Category?</h1>

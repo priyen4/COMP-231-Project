@@ -1,6 +1,10 @@
 ﻿@{
     ViewBag.Title = "Products";
 }
+@if (!User.IsInRole("Admin"))
+{
+    Response.Redirect("~/AccessDenied.aspx");
+}
 
 <section class="flat-row flat-iconbox">
     <div class="container">

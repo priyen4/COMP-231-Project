@@ -7,7 +7,10 @@
 
     var imageURL = !string.IsNullOrEmpty(Model.ImageURL) ? Model.ImageURL : "/Content/images/system/placeholder-image.png";
 }
-
+@if (!User.IsInRole("Admin"))
+{
+    Response.Redirect("~/AccessDenied.aspx");
+}s
 <h2>Edit Category</h2>
 
 
@@ -54,15 +57,15 @@
 
 </form>
 
-   
-    <script>
+
+<script>
 	$("#imageUpload").change(function () {
 		var element = this;
-	
+
 		var formData = new FormData();
 
 		var totalFiles = element.files.length;
-	
+
 		for (var i = 0; i < totalFiles; i++) {
 			var file = element.files[i];
 			formData.append("Photo", file);
@@ -104,4 +107,4 @@
             $("#actionContainer").html("");
             focusAction("tableContiner");
         });
-    </script>
+</script>

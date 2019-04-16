@@ -6,7 +6,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 
-
+ @if (!User.IsInRole("Admin"))
+            {
+                Response.Redirect("~/AccessDenied.aspx");
+            }
 <div>
     <form method="post">
         <div class="row">
